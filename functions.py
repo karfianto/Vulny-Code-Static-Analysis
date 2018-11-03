@@ -29,7 +29,9 @@ def display(path,payload,vulnerability,line,declaration_text,declaration_line, c
     vuln = "{}({})".format(payload[0], vuln)
 
     # Final Display
-    rows, columns = os.popen('stty size', 'r').read().split()
+    # rows, columns = os.popen('stty size', 'r').read().split()
+    rows = 34 
+    columns = 129
     print "-" * (int(columns)-1)
     print "Name        " + "\t"+header
     print "-" * (int(columns)-1)
