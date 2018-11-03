@@ -93,7 +93,7 @@ def recursive(dir,progress):
     progress += 1
     try:
       for name in os.listdir(dir):
-        print('\tAnalyzing : '+'⬛'*progress+'\r'),
+        # print('\tAnalyzing : '+'⬛'*progress+'\r'),
 
         # Targetting only PHP Files
         if os.path.isfile(os.path.join(dir, name)):
