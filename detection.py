@@ -104,7 +104,7 @@ def recursive(dir,progress):
 
     except OSError, e:
         print "Error 404 - Not Found, maybe you need more right"+" "*30
-        # exit(-1)
+        exit(-1)
 
 
 # Display basic informations about the scan
