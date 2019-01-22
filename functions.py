@@ -112,7 +112,10 @@ def check_declaration(content, vuln, path):
 
 
 	# Extract declaration - for ($something as $somethingelse)
-    regex_declaration2 = re.compile("\$(.*?)([\t ]*)as(?!=)([\t ]*)\$"+vuln[1:])
+    try:
+        regex_declaration2 = re.compile("\$(.*?)([\t ]*)as(?!=)([\t ]*)\$"+vuln[1:])
+    except Exception as e:
+        return (False, "","")
     declaration2       = regex_declaration2.findall(content)
     if len(declaration2) > 0:
 		return check_declaration(content, "$"+declaration2[0][0], path)
