@@ -22,7 +22,7 @@ def display(path,payload,vulnerability,line,declaration_text,declaration_line, c
     header = "\033[1mPotential vulnerability found : \033[92m{}\033[0m".format(payload[1])
 
     # Line  25  in test/sqli.php
-    line = "n°\033[92m{}\033[0m in {}".format(line,path)
+    line = "\033[92m{}\033[0m in {}".format(line,path)
 
     # Code : include($_GET['patisserie'])
     vuln = nth_replace("".join(vulnerability), colored, "\033[93m"+colored+"\033[0m", occurence)
@@ -42,7 +42,7 @@ def display(path,payload,vulnerability,line,declaration_text,declaration_line, c
     if not "$_" in colored:
         declared = "Undeclared in the file"
         if declaration_text != "":
-            declared = "Line n°\033[0;92m"+declaration_line+"\033[0m : "+ declaration_text
+            declared = "Line \033[0;92m"+declaration_line+"\033[0m : "+ declaration_text
 
         print "\033[1mDeclaration \033[0m " + "\t"+declared
 
